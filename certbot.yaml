@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  certbot:
+    image: certbot/certbot
+    ports:
+      - 3080:80
+    volumes:
+      - archive/:/etc/letsencrypt/archive/
+    command: >
+             certonly --standalone --non-interactive --agree-tos
+             --email my@email.com
+             --domain example.com
+             --domain another.example.com

@@ -1,0 +1,10 @@
+[Unit]
+Description=Forward requests to upstream servers
+
+[Service]
+Type=simple
+ExecStart=%h/.cargo/bin/wolfpup_weblog %h/wolfpup_weblog/config.json
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

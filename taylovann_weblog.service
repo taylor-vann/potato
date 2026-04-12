@@ -1,0 +1,10 @@
+[Unit]
+Description=Forward requests to upstream servers
+
+[Service]
+Type=simple
+ExecStart=%h/.cargo/bin/taylorvann_weblog %h/taylorvann_weblog/config.json
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,12 @@
+[Unit]
+Description=Forward requests to upstream servers
+StartLimitIntervalSec=30
+StartLimitBurst=2
+
+[Service]
+Type=simple
+ExecStart=%h/.cargo/bin/reverse_proxy %h/reverse_proxy/config.json
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

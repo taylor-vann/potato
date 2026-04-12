@@ -1,0 +1,9 @@
+[Unit]
+Description=Update dns records for self-hosted domains
+
+[Service]
+Type=simple
+ExecStart=%h/.cargo/bin/update_dns_records %h/update_dns_records/config.json
+
+[Install]
+WantedBy=default.target
