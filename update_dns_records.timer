@@ -1,0 +1,11 @@
+[Unit]
+Description=Update dns records every minute
+
+[Timer]
+Persistent=true
+OnBootSec=120
+OnUnitActiveSec=60
+Unit=update_dns_records.service
+
+[Install]
+WantedBy=timers.target
